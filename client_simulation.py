@@ -1,7 +1,7 @@
 import requests
 import time
 
-BASE_URL = "http://localhost:5000/api"
+BASE_URL = "http://localhost:8000/api"
 
 def update_stage(product_id, stage, location):
     payload = {
@@ -17,6 +17,7 @@ def update_stage(product_id, stage, location):
         }
     }
     response = requests.post(f"{BASE_URL}/update", json=payload)
+    # print("Raw Response Text:", response.text)  # Debug print
     print("Update Response:", response.json())
 
 def track_product(product_id):
