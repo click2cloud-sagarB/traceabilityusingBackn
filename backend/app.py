@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
 import datetime
 import os
+from flask_cors import CORS
 from config import Config
 
 app = Flask(__name__)
 app.config.from_object(Config)
+CORS(app)  # Allow cross-origin requests
 
 # In-memory storage simulating a decentralized traceability ledger.
 traceability_data = {}
